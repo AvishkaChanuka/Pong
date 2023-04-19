@@ -57,30 +57,38 @@ int main(){
          }
 
          //Handle the pressing and releasing of the arrow keys
-         if(Keyboard::isKeyPressed(Keyboard::Left))
+         if(Keyboard::isKeyPressed(Keyboard::Left)){
              bat.moveLeft();
-         else
+         }
+         else {
              bat.stopLeft();
+         }
 
-         if(Keyboard::isKeyPressed(Keyboard::Right))
+         if(Keyboard::isKeyPressed(Keyboard::Right)) {
              bat.moveRight();
-         else
+         }
+         else{
              bat.stopRight();
+         }
 
+         //Update the bat, the ball and the HUD
 
-        /*
-         Update the bat, the ball and the HUD
-         ****************************
-         ****************************
-         ****************************
-        */
+         //Update the deltaTime
+         Time dt = clock.restart();
+         bat.update(dt);
 
-        /*
-         Draw the bat, the ball and the HUD
-         ****************************
-         ****************************
-         ****************************
-        */
+         //Update HuD Text
+         std::stringstream ss;
+         ss << "Score:" << score << "   Lives:" << lives;
+         hud.setString(ss.str());
+
+         //Draw the bat, the ball and the HUD
+
+         window.clear();
+         window.draw(hud);
+         window.draw(bat.getShape());
+         window.display();
+
 
     }
 
