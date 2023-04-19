@@ -25,6 +25,8 @@ void Ball::reboundSides() {
 }
 
 void Ball::reboundBatOrTop() {
+    // Speed up a little-bit on each hit
+    m_Speed = m_Speed * 1.1f;
     m_DirectionY = -m_DirectionY;
 }
 
