@@ -25,11 +25,11 @@ void Bat::moveRight(){
 }
 
 void Bat::stopLeft() {
-    m_MovingLeft = true;
+    m_MovingLeft = false;
 }
 
 void Bat::stopRight() {
-    m_MovingRight = true;
+    m_MovingRight = false;
 }
 
 void Bat::update(Time dt) {
