@@ -3,7 +3,7 @@ project(Pong)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(Pong main.cpp)
+add_executable(Pong main.cpp Bat.h Bat.cpp Bat.cpp Ball.h Ball.cpp Ball.cpp)
 
 set(SFML_STATIC_LIBRARIES TRUE)
 set(SFML_DIR D:/SDK/SFML/x64/SFML-2.5.1/lib/cmake/SFML)
